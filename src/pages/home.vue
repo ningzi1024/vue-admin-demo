@@ -7,13 +7,14 @@
 
 <script>
 import Mapper from '../components/Maps/maps'
+import service from '../services/apiBase'
 export default {
     name: 'home',
     components:{
         Mapper
     },
     mounted() {
-        console.log(this.$route);
+        console.log(service);
     }
 }
 </script>

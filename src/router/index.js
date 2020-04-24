@@ -22,6 +22,11 @@ export default new VueRouter({
             component: ()=>import('../pages/user')
         },
         {
+            path: '/login',
+            name: 'login',
+            component: ()=>import('../pages/login')
+        },
+        {
             path: '*',
             name: '404',
             component: ()=>import('../pages/404')
