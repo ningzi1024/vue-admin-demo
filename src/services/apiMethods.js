@@ -1,7 +1,7 @@
 import service from './apiBase'
 import QS from 'qs';
 
-const API = {
+const ApiMethods = {
     get(url, params){
         return new Promise((resolve, reject)=>{
             service.get(url,{
@@ -9,7 +9,7 @@ const API = {
             }).then(res=>{
                 resolve(res.data)
             }).catch(err=>{
-                reject(err.data)
+                reject(err)
             })
         })
     },
@@ -18,10 +18,10 @@ const API = {
             service.post(url, QS.stringify(params)).then(res=>{
                 resolve(res.data)
             }).catch(err=>{
-                reject(err.data)
+                reject(err)
             })
         })
     }
 }
 
-export default API;
+export default ApiMethods;

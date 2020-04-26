@@ -7,14 +7,24 @@
 
 <script>
 import Mapper from '../components/Maps/maps'
-import service from '../services/apiBase'
+import service from '../services/services'
 export default {
     name: 'home',
     components:{
         Mapper
     },
+    data(){
+        return {
+            areas: []
+        }
+    },
     mounted() {
-        console.log(service);
+        service.gis().then(data=>{
+            console.log(typeof data);
+            this.areas = data.data;
+        }).catch(err=>{
+            console.log(err);
+        })
     }
 }
 </script>
