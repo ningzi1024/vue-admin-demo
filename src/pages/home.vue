@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="home-wrap">
         <h1>Home</h1>
         <Mapper />
     </div>
@@ -8,6 +8,7 @@
 <script>
 import Mapper from '../components/Maps/maps'
 import service from '../services/services'
+import moment from 'moment'
 export default {
     name: 'home',
     components:{
@@ -19,6 +20,7 @@ export default {
         }
     },
     mounted() {
+        console.log(moment().format('X'), moment(1587971590*1000).format('YYYY-MM-DD HH:mm:ss'));
         service.gis().then(data=>{
             console.log(typeof data);
             this.areas = data.data;
@@ -30,8 +32,13 @@ export default {
 </script>
 
 <style lang="stylus">
-h1
-    font-size 15px
-    color blue
+.home-wrap
+    width 100%
+    height 500px
+    background #eee
+
+    h1
+        font-size 15px
+        color blue
 
 </style>
