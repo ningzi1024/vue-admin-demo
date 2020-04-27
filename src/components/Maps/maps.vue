@@ -132,7 +132,7 @@ export default {
         renderMap({ name, code, features }, linkEvent) {
             // console.time();
             if(code) {
-                return api.get(`/public/ui/map/json/${code}.json`, 'f').then(res => {
+                return axios.get(`/public/ui/map/json/${code}.json`).then(res => {
                     // console.timeEnd();
                     echarts.registerMap(name, res);
                     const series = this.createSeries(this.mapData, this.isWarning);
@@ -145,8 +145,8 @@ export default {
                     }
 
                     // console.log(code, linkEvent);
-                    _.isFunction(linkEvent) && linkEvent(res);
-                    _.isNumeric(linkEvent) && this.positionList.splice(linkEvent + 1);
+                    typeof linkEvent ==='function' && linkEvent(res);
+                    (typeof linkEvent ==='number'||typeof linkEvent ==='string') && this.positionList.splice(linkEvent + 1);
                 });
             }
                 const b = {
