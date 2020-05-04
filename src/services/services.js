@@ -8,13 +8,16 @@ const services = {
         return Api.get(baseUrl+'gis', data)
     },
     hostgroup(data={}){
-        return Api.get('/api/v1/setting/hostgroup', data);
+        return Api.get(baseUrl+'setting/hostgroup', data);
     },
     realtime(data){
-        return Api.get('/api/v1/realtime?type=hostgroup_overview', data)
+        return Api.get(baseUrl+'realtime?type=hostgroup_overview', data)
     },
     status(data){
-        return Api.get('/api/v1/setting/function/status', data);
+        return Api.get(baseUrl+'setting/function/status', data);
+    },
+    menus(data){
+        return Api.get(baseUrl+'menus',data);
     }
 }
 
