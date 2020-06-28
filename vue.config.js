@@ -2,7 +2,7 @@ module.exports={
     outputDir: 'dist',
     assetsDir: 'static',
     devServer:{
-        port: 8088,
+        port: 8080,
         proxy: {        
             '/api/v1': {
                 target: 'http://192.168.1.226:8800/api/v1',

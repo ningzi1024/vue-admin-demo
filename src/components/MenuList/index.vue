@@ -4,7 +4,7 @@
             <RadioButton :label="false">展开</RadioButton>
             <RadioButton :label="true">收起</RadioButton>
         </RadioGroup>
-        <Menu
+        <el-menu
             default-active="overview.html"
             @select="handleSelect"
             mode="vertical"
@@ -15,12 +15,12 @@
             :default-openeds="default_openeds_array"
             active-text-color="#ffd04b">
             <RecursiveMenu v-for="(menu,index) in menuList" :key="menu.url+index" :item="menu"/>
-        </Menu>
+        </el-menu>
     </div>
 </template>
 
 <script>
-    import {RadioGroup, RadioButton, Menu} from 'element-ui'
+import {RadioGroup, RadioButton, Menu} from 'element-ui'
 import RecursiveMenu from './recursiveMenu'
 export default {
     name: 'MenuList',
@@ -32,7 +32,7 @@ export default {
     },
     components:{
         RadioGroup, RadioButton,
-        Menu,
+        [Menu.name]:Menu,
         RecursiveMenu
     },
     data(){
