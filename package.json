@@ -13,7 +13,7 @@
     "cross-env": "^7.0.2",
     "echarts": "^4.7.0",
     "element-ui": "^2.13.1",
-    "moment": "^2.24.0",
+    "moment": "^2.29.4",
     "postcss-px2rem": "^0.3.0",
     "px2rem-loader": "^0.1.9",
     "qs": "^6.9.3",
